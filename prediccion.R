@@ -1,21 +1,21 @@
 
-source("D:/OneDrive - UPV/BigData/Asignaturas/15 Text mining/pan22 - ENTREGA/functions.R")
+source("functions.R")
 
 start.time <- Sys.time()
 
 # Preparing parameters
-vtn <- 10000 # Número de palabras para los vocabularios parciales de ironia y no
-vn <- 8   # tamaño final del vocabulario 
+vtn <- 10 # Número de palabras para los vocabularios parciales de ironia y no
+vn <- 10   # tamaño final del vocabulario 
 k <- 10        # Number of folds in cross-validation. Usually used 10
 r <- 3       # Number of repeats in cross-validation. Usually used 3
 
-pathbase <- "D:/OneDrive - UPV/BigData/Asignaturas/15 Text mining/pan22 - ENTREGA/"
+pathbase <- getwd()
 
 fres <- paste(vtn,"x",vn,sep="")
 
-path_training <- paste(pathbase,"training/en/",sep="")	# Your training path
-path_predict <- paste(pathbase,"predicciones/en/",sep="")			# a predecir
-path_result <- paste(pathbase,"resultados/",sep="")			# El resultado
+path_training <- paste(pathbase,"/training/en/",sep="")	# Your training path
+path_predict <- paste(pathbase,"/predicciones/en/",sep="")			# a predecir
+path_result <- paste(pathbase,"/resultados/",sep="")			# El resultado
 dir.create(paste(path_result,fres,sep=""))
 path_result <- paste(path_result,fres,"/",sep="")
 lang <- "en"
